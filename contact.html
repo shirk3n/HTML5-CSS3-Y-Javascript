@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>Batman</title>
+		<meta charset="UTF-8">
+	</head>
+
+	<body>
+		<nav>
+			<ul>
+				<li>
+					<a href="index.html">Inicio</a>
+				</li>
+				<li>
+					<a href="index.html">Quien soy</a>
+				</li>
+				<li>
+					<a href="index.html">Equipo</a>
+				</li>
+				<li>
+					<a href="index.html">Transporte</a>
+				</li>
+				<li>
+					<a href="contact.html">Contacto</a>
+				</li>
+			</ul>
+		</nav>
+
+		<section>
+			<h2>Contacta con nosotros</h2>
+			<div>
+				<div id="googleMap"></div>
+			</div>
+
+			<div>
+				<form name="contact-batman" method="get">
+					<div>
+						<label for="nombre">Nombre:</label>
+						<input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+						
+						<label for="apellidos">Apellidos:</label>
+						<input type="text" id="apellidos" name="apellidos" placeholder="apellidos" required>
+					</div>
+
+					<div>
+						<label>Email:</label>
+						<input type="email" id="email" name="email" placeholder="name@company.com" pattern="[A-Za-z0-9\.\+]+@[A-Za-z0-9]+\.[A-Za-z0-9\.]+" required>
+					</div>
+
+					<div>
+						<label for="tipo_mision_1">Consulta</label>
+						<input type="radio" id="tipo_mision_1" name="tipo_mision" value="Consulta" required>
+						<label for="tipo_mision_2">Misión simple</label>
+						<input type="radio" id="tipo_mision_2" name="tipo_mision" value="Misión simple" required>
+						<label for="tipo_mision_3">Rescate</label>
+						<input type="radio" id="tipo_mision_3" name="tipo_mision" value="Rescate" required>
+						<label for="tipo_mision_4">Salvar Gotham</label>
+						<input type="radio" id="tipo_mision_4" name="tipo_mision" value="Salvar Gotham" required>
+					</div>
+
+					<div>
+						<label for="ejercito">Tamaño del ejercito</label>
+						<input type="number" id="ejercito" name="ejercito" min="20" required>
+					</div>
+
+					<div>
+						<label for="fecha">Fecha de la mision:</label>
+						<input type="date" id="fecha" name="fecha" required>
+					</div>
+
+					<div>
+						<input type="submit" name="Enviar">
+					</div>
+				</form>
+			</div>
+		</section>
+
+		<section>
+			<table>
+				<thead>
+					<tr>
+						<th>Tipo de servicio</th>
+						<th>Precio</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Misión simple</td>
+						<td>500 €</td>
+					</tr>
+
+					<tr>
+						<td>Rescate</td>
+						<td>1.000 €</td>
+					</tr>
+
+					<tr>
+						<td>Salvar Gotham</td>
+						<td>15.000 €</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+
+		<footer>
+			Juan Delgado &copy; 2016 kameic.com
+		</footer>
+	</body>
+</html>
