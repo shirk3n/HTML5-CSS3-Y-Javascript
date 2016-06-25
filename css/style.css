@@ -38,9 +38,12 @@ body{
 	display: inline-block;
 	text-decoration: none; /*Te quita el subrayado del texto*/
 	padding: 20px;
-
 }
 
+.navbar .navbar-list .navbar-item a:hover{
+	color: #F7F7F7;
+	background-color: #A4A4A4; 
+}
 .title{
 	position: absolute;
 	left: 0;
@@ -65,10 +68,18 @@ body{
 	width: 100%;
 	text-align: center;
 	font-family: batman;
-	font-size: 28px;
+	font-size: 25px;
 }
 
+/*-------------------Fin cabecera------------------------------*/
 
+.about-me .batman-video{
+	max-width: 50%;
+	float: left;
+}
 
-
+.about-me .batman-info{
+	max-width: 50%;
+	float: right;
+}
 
