@@ -1,8 +1,59 @@
 body{
 	font-family: 'Roboto', sans-serif;
+	margin: 0px; /*Se le pone para quitar el margin que todos los navegadores por defecto lo tienen*/
 }
 
-@font-face{
+@font-face{ /*Se ha creado la fuente de batman*/
 	font-family: batman;
 	src: url(../fonts/batmfo__.ttf);
 }
+
+.clearfix:after { /*Para soloucionar los problemas del float*/
+  content: " "; /* Older browser do not support empty content */
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+.navbar{
+	position: fixed;
+	background-color: #F7F7F7;
+	top: 0px;
+	width: 100%;
+}
+
+.navbar .navbar-list {
+	list-style-type: none; /*Me quita el estilo*/
+	margin: 0px; /*Siempre lo quitamos y si queremos darle margen lo hacemos en los hijos*/
+	float: right;
+
+}
+
+.navbar .navbar-list .navbar-item{
+	display: inline-block;
+}
+
+.navbar .navbar-list .navbar-item a{
+	display: inline-block;
+	text-decoration: none; /*Te quita el subrayado del texto*/
+	padding: 20px;
+
+}
+
+.title{
+	position: absolute;
+	left: 0;
+	top: 65%;
+	width: 100%;
+	color: white;
+	font-family: batman;
+	text-align: center;
+	font-size: 100px;
+}
+
+.title-img{
+	width: 100%; /*Siempre 100% para que se adapte al contenedor*/
+	height: 100vh; /*View port height- coge todo la pagina*/
+}
+
