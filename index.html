@@ -4,6 +4,7 @@
 		<title>Batman</title>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/grid.css">
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	</head>
 
@@ -13,10 +14,9 @@
 			<img class="title-img" src="images/batman.jpg" alt="Señal de batman">
 			<p class="title-cite">“Él puede tomar la decisión que nadie más puede, la decisión correcta”</p>
 		</header>
-
 		<nav class="navbar">
 			<ul class="navbar-list">
-				<li class="navbar-item">
+				<li class="navbar-item active">
 					<a href="#">Inicio</a>
 				</li>
 				<li class="navbar-item">
@@ -33,95 +33,102 @@
 				</li>
 			</ul>
 		</nav>
+		<div class="container"> <!-- Todo de nuestra web tendra un tamaño fijo -->
+			<section id="quien-soy" class="about-me clearfix section-container" >
+				<div class="batman-video">
+					<video width="550" height="300" controls>
+						<source src="videos/batman-lego.mp4" type="video/mp4">
+					</video>
+				</div>
+				<div class="batman-info">
+					<h2>Quien soy</h2>
+					<strong>Batman:</strong> 
+					<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+				</div>
+			</section>
 
-		<section id="quien-soy" class="about-me clearfix" >
-			<div class="batman-video">
-				<video width="550" height="300" controls>
-					<source src="videos/batman-lego.mp4" type="video/mp4">
-				</video>
-			</div>
-			<div class="batman-info">
-				<h2>Quien soy</h2>
-				<strong>Batman:</strong> 
-				<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
-			</div>
-		</section>
-
-		<section id="equipo">
-			<article>
-				<header>
-					<h3>Alfred Pennyworth</h3>
-					(<span>Michael Caine</span>)
-					<h4>Mayordomo</h4>
-				</header>
-				<figure>
-					<!-- <img src="images/alfred.jpg" alt="Foto de Alfred"> -->
-					<figcaption>
-						<small>Alfred Pennyworth</small>
-					</figcaption>
-				</figure>
-				<p>“¿Por qué caemos, Bruce? Para que aprendamos a levantarnos” - <cite>Batman Begins</cite></p>
-			</article>
-
-			<article>
-				<header>
-					<h3>Harvey Dent</h3>
-					(<span>Aaron Eckhart</span>)
-					<h4>Fiscal del distrito</h4>
-				</header>
-				<figure>
-					<!-- <img src="images/harvey.jpg" alt="Foto de Harvey"> -->
-					<figcaption>
-						<small>Harvey Dent</small>
-					</figcaption>
-				</figure>
-				<p>“O mueres como un héroe, o vives lo suficiente como para convertirte en el villano” - <cite>Batman El Caballero Oscuro</cite></p>
-			</article>
-
-			<article>
-				<header>
-					<h3>James Gordon</h3>
-					(<span>Gary Oldman</span>)
-					<h4>Policia</h4>
-				</header>
-				<figure>
-					<!-- <img src="images/gordon.jpg" alt="Foto de James Gordon"> -->
-					<figcaption>
-						<small>James Gordon</small>
-					</figcaption>
-				</figure>
-				<p>“Él es el héroe que Gotham merece, pero no el que necesita en este momento” - <cite>Batman El Caballero Oscuro</cite></p>
-			</article>
-		</section>
-
-		<section id="transporte">
-			<article>
-				<figure>
-					<!-- <img src="images/car.jpg" alt="Coche"> -->
-					<figcaption>
-						<small>BatMovil</small>
-					</figcaption>
-				</figure>
-				<p>Fabricado en el año <time datetime="2005">2005</time> y se uso durante toda la trilogía.</p>
-			</article>
-
-			<article>
-				<figure>
-					<!-- <img src="images/moto.jpg" alt="Moto"> -->
-					<figcaption>
-						<small>Moto de batman</small>
-					</figcaption>
-				</figure>
-				<p>Fabricado en el año <time datetime="2005">2005</time> y se uso durante toda la trilogía.</p>
-			</article>
-		</section>
-
-		<footer>
+			<section id="equipo" class="section-content-reverse">
+				<div class="row container section-container"> <!-- Me coge el estilo del container para tener los margin de dentro pero el section tiene el calc() para que se expanda -->
+					<div class="col-4">
+						<article>
+							<header>
+								<h3>Alfred Pennyworth</h3>
+								(<span>Michael Caine</span>)
+								<h4>Mayordomo</h4>
+							</header>
+							<figure class="team-member-photo">
+								<img src="images/alfred.jpg" alt="Foto de Alfred">
+								<figcaption>
+									<small>Alfred Pennyworth</small>
+								</figcaption>
+							</figure>
+							<p>“¿Por qué caemos, Bruce? Para que aprendamos a levantarnos” - <cite>Batman Begins</cite></p>
+						</article>
+					</div>
+				
+					<div class="col-4">
+						<article>
+							<header>
+								<h3>Harvey Dent</h3>
+								(<span>Aaron Eckhart</span>)
+								<h4>Fiscal del distrito</h4>
+							</header>
+							<figure class="team-member-photo">
+								<img src="images/harvey.jpg" alt="Foto de Harvey">
+								<figcaption>
+									<small>Harvey Dent</small>
+								</figcaption>
+							</figure>
+							<p>“O mueres como un héroe, o vives lo suficiente como para convertirte en el villano” - <cite>Batman El Caballero Oscuro</cite></p>
+						</article>
+					</div>
+					<div class="col-4">
+						<article>
+							<header>
+								<h3>James Gordon</h3>
+								(<span>Gary Oldman</span>)
+								<h4>Policia</h4>
+							</header>
+							<figure class="team-member-photo">
+								<img src="images/gordon.jpg" alt="Foto de James Gordon">
+								<figcaption>
+									<small>James Gordon</small>
+								</figcaption>
+							</figure>
+							<p>“Él es el héroe que Gotham merece, pero no el que necesita en este momento” - <cite>Batman El Caballero Oscuro</cite></p>
+						</article>
+					</div>
+				</div>
+			</section>
+			<section id="transporte" class="section-container">
+				<div class="row-flex">
+					<article class="transporte-item">
+						<figure>
+							<img src="images/car.jpg" alt="Coche" class="transporte-img">
+							<figcaption>
+								<small>BatMovil</small>
+							</figcaption>
+						</figure>
+						<p class="transporte-info">Fabricado en el año <time datetime="2005">2005</time> y se uso durante toda la trilogía.</p>
+					</article>
+					<article class="transporte-item">
+						<figure>
+							<img src="images/moto.jpg" alt="Moto" class="transporte-img">
+							<figcaption>
+								<small>Moto de batman</small>
+							</figcaption>
+						</figure>
+						<p class="transporte-info">Fabricado en el año <time datetime="2005">2005</time> y se uso durante toda la trilogía.</p>
+					</article>
+				</div>
+			</section>
+		</div>
+		<footer class="footer">
 			Juan Delgado &copy; 2016 Kameic.io
 		</footer>
 	</body>

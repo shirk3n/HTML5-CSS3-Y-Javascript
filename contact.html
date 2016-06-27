@@ -3,106 +3,133 @@
 	<head>
 		<title>Batman</title>
 		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/grid.css">
+		<script src="http://maps.googleapis.com/maps/api/js"></script>
+
+		<div class="col-6">
+            <div id="map"></div>
+            <script>
+                function initMap() {
+                var mapDiv = document.getElementById('map');
+                var map = new google.maps.Map(mapDiv, {
+                   center: {lat: 42.762480, lng: -83.283406},
+                       zoom: 15
+                   });
+                 }
+           </script>
+           <script async defer
+               src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-jpiiZm0kg4wbYwPvUtNZvyLbiNcz6p8&callback=initMap">
+           </script>
+        </div>
 	</head>
 
 	<body>
-		<nav>
-			<ul>
-				<li>
+		<nav class="navbar">
+			<ul class="navbar-list">
+				<li class="navbar-item">
 					<a href="index.html">Inicio</a>
 				</li>
-				<li>
+				<li class="navbar-item">
 					<a href="index.html">Quien soy</a>
 				</li>
-				<li>
+				<li class="navbar-item">
 					<a href="index.html">Equipo</a>
 				</li>
-				<li>
+				<li class="navbar-item">
 					<a href="index.html">Transporte</a>
 				</li>
-				<li>
+				<li class="navbar-item active">
 					<a href="contact.html">Contacto</a>
 				</li>
 			</ul>
 		</nav>
 
-		<section>
-			<h2>Contacta con nosotros</h2>
-			<div>
-				<div id="googleMap"></div>
-			</div>
 
-			<div>
-				<form name="contact-batman" method="get">
-					<div>
-						<label for="nombre">Nombre:</label>
-						<input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
-						
-						<label for="apellidos">Apellidos:</label>
-						<input type="text" id="apellidos" name="apellidos" placeholder="apellidos" required>
-					</div>
+		<div class="container">
+			<section class="row section-container">
+				<h2>Contacta con nosotros</h2>
+				<div class="col-6">
+					<div id="googleMap"></div>
+				</div>
 
-					<div>
-						<label>Email:</label>
-						<input type="email" id="email" name="email" placeholder="name@company.com" pattern="[A-Za-z0-9\.\+]+@[A-Za-z0-9]+\.[A-Za-z0-9\.]+" required>
-					</div>
+				<div class="col-6">
+					<form class="form" name="contact-batman" method="get">
+						<div class="form-row">
+							<label for="nombre">Nombre:</label>
+							<input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+							
+							<label for="apellidos">Apellidos:</label>
+							<input type="text" id="apellidos" name="apellidos" placeholder="apellidos" required>
+						</div>
 
-					<div>
-						<label for="tipo_mision_1">Consulta</label>
-						<input type="radio" id="tipo_mision_1" name="tipo_mision" value="Consulta" required>
-						<label for="tipo_mision_2">Misión simple</label>
-						<input type="radio" id="tipo_mision_2" name="tipo_mision" value="Misión simple" required>
-						<label for="tipo_mision_3">Rescate</label>
-						<input type="radio" id="tipo_mision_3" name="tipo_mision" value="Rescate" required>
-						<label for="tipo_mision_4">Salvar Gotham</label>
-						<input type="radio" id="tipo_mision_4" name="tipo_mision" value="Salvar Gotham" required>
-					</div>
+						<div class="form-row">
+							<label>Email:</label>
+							<input type="email" id="email" name="email" placeholder="name@company.com" pattern="[A-Za-z0-9\.\+]+@[A-Za-z0-9]+\.[A-Za-z0-9\.]+" required>
+						</div>
 
-					<div>
-						<label for="ejercito">Tamaño del ejercito</label>
-						<input type="number" id="ejercito" name="ejercito" min="20" required>
-					</div>
+						<div class="form-row">
+							<label for="tipo_mision_1">Consulta</label>
+							<input type="radio" id="tipo_mision_1" name="tipo_mision" value="Consulta" required>
+							<label for="tipo_mision_2">Misión simple</label>
+							<input type="radio" id="tipo_mision_2" name="tipo_mision" value="Misión simple" required>
+							<label for="tipo_mision_3">Rescate</label>
+							<input type="radio" id="tipo_mision_3" name="tipo_mision" value="Rescate" required>
+							<label for="tipo_mision_4">Salvar Gotham</label>
+							<input type="radio" id="tipo_mision_4" name="tipo_mision" value="Salvar Gotham" required>
+						</div>
 
-					<div>
-						<label for="fecha">Fecha de la mision:</label>
-						<input type="date" id="fecha" name="fecha" required>
-					</div>
+						<div class="form-row">
+							<label for="ejercito">Tamaño del ejercito</label>
+							<input type="number" id="ejercito" name="ejercito" min="20" required>
+						</div>
 
-					<div>
-						<input type="submit" name="Enviar">
-					</div>
-				</form>
-			</div>
-		</section>
+						<div class="form-row">
+							<label for="fecha">Fecha de la mision:</label>
+							<input type="date" id="fecha" name="fecha" required>
+						</div>
 
-		<section>
-			<table>
-				<thead>
-					<tr>
-						<th>Tipo de servicio</th>
-						<th>Precio</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>Misión simple</td>
-						<td>500 €</td>
-					</tr>
+						<div class="form-row">
+							<input type="submit" name="Enviar">
+						</div>
+					</form>
+				</div>
+			</section>
 
-					<tr>
-						<td>Rescate</td>
-						<td>1.000 €</td>
-					</tr>
+			<section class="section-container">
+				<table>
+					<thead>
+						<tr>
+							<th>Tipo de servicio</th>
+							<th>Precio</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Consulta</td>
+							<td>100 €</td>
+						</tr>
 
-					<tr>
-						<td>Salvar Gotham</td>
-						<td>15.000 €</td>
-					</tr>
-				</tbody>
-			</table>
-		</section>
+						<tr>
+							<td>Misión simple</td>
+							<td>500 €</td>
+						</tr>
 
-		<footer>
+						<tr>
+							<td>Rescate</td>
+							<td>1.000 €</td>
+						</tr>
+
+						<tr>
+							<td>Salvar Gotham</td>
+							<td>15.000 €</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+		</div>
+
+		<footer class="footer">
 			Juan Delgado &copy; 2016 kameic.com
 		</footer>
 	</body>

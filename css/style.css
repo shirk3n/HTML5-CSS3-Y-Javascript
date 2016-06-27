@@ -1,50 +1,63 @@
-body{
-	font-family: 'Roboto', sans-serif;
-	margin: 0px; /*Se le pone para quitar el margin que todos los navegadores por defecto lo tienen*/
+* {
+	box-sizing: border-box;
 }
 
-@font-face{ /*Se ha creado la fuente de batman*/
+body {
+	font-family: 'Roboto', sans-serif;
+	margin: 0px;
+	overflow-x: hidden;
+}
+
+@font-face {
 	font-family: batman;
 	src: url(../fonts/batmfo__.ttf);
 }
 
-.clearfix:after { /*Para soloucionar los problemas del float*/
-  content: " "; /* Older browser do not support empty content */
-  visibility: hidden;
-  display: block;
-  height: 0;
-  clear: both;
+.clearfix:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
 }
 
-.navbar{
+.navbar {
 	position: fixed;
 	background-color: #F7F7F7;
 	top: 0px;
 	width: 100%;
 }
 
+
 .navbar .navbar-list {
-	list-style-type: none; /*Me quita el estilo*/
-	margin: 0px; /*Siempre lo quitamos y si queremos darle margen lo hacemos en los hijos*/
+	list-style-type: none;
+	margin: 0px;
 	float: right;
-
 }
 
-.navbar .navbar-list .navbar-item{
+.navbar .navbar-list .navbar-item {
 	display: inline-block;
 }
 
-.navbar .navbar-list .navbar-item a{
+.navbar .navbar-list .navbar-item a {
 	display: inline-block;
-	text-decoration: none; /*Te quita el subrayado del texto*/
+	text-decoration: none;
 	padding: 20px;
+	color: rgba(0,0,0,0.92);
+	transition: all 0.7s linear; /*Transición sin hacer javascript*/
 }
 
-.navbar .navbar-list .navbar-item a:hover{
+.navbar .navbar-list .navbar-item a:hover {
 	color: #F7F7F7;
-	background-color: #A4A4A4; 
+	background-color: #A4A4A4;
 }
-.title{
+.navbar .navbar-list .navbar-item.active {
+	color:#F7F7F7;
+	background-color: #A4A4A4;
+
+}
+
+.title {
 	position: absolute;
 	left: 0;
 	top: 65%;
@@ -55,31 +68,137 @@ body{
 	font-size: 100px;
 }
 
-.title-img{
-	width: 100%; /*Siempre 100% para que se adapte al contenedor*/
-	height: 100vh; /*View port height- coge todo la pagina*/
+.title-img {
+	width: 100%;
+	height: 100vh;
 }
 
-.title-cite{
+.title-cite {
 	position: absolute;
-	left: 0px;
-	top:60%;
-	color:white;
+	left: 0;
+	top: 60%;
+	color: white;
 	width: 100%;
 	text-align: center;
 	font-family: batman;
-	font-size: 25px;
+	font-size: 28px;
 }
 
-/*-------------------Fin cabecera------------------------------*/
-
-.about-me .batman-video{
+.about-me .batman-photo {
 	max-width: 50%;
 	float: left;
 }
 
-.about-me .batman-info{
+.about-me .batman-info {
 	max-width: 50%;
 	float: right;
 }
 
+.team-member-photo img {
+	max-width: 100%;
+	height: 300px;
+	border-radius: 50%;
+}
+
+.section-content-reverse {
+	background-color: rgba(0, 0, 0, 0.92);
+	color: white;
+	margin-right: calc(-50vw + 50%);
+	margin-left: calc(-50vw + 50%);
+}
+
+.row-flex {
+	display: flex;
+	display: -webkit-flex;
+	flex-flow: row wrap;
+	-webkit-flex-flow: row wrap;
+}
+
+.transporte-img {
+	max-width: 100%;
+	height: 250px;
+	border-radius: 50%;
+}
+
+.transporte-item {
+	display: flex;
+	display: -webkit-flex;
+	flex-direction: column;
+	-webkit-flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	flex-grow: 1;
+}
+
+.transporte-info {
+	align-self: flex-end;
+}
+
+.footer {
+	background-color: rgba(0, 0, 0, 0.92);
+	color: white;
+	height: 50px;
+	display: flex;
+	display: -webkit-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.form {
+	padding: 0 20px;
+}
+
+.form .form-row {
+	padding: 10px;
+}
+
+input {
+	padding: 4px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+	background-color: #4CAF50;
+	border: none;
+	color: white;
+	padding: 15px 40px;
+	text-decoration: none;
+	margin: 4px 2px;
+	cursor: pointer;
+	border-radius: 0px;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+thead > tr {
+	background-color: #f5f5f5;
+}
+
+th {
+	height: 50px;
+}
+
+
+th, td {
+	padding: 8px;
+	border-bottom: 1px solid #ddd;
+}
+
+tbody > tr:hover {
+	background-color: #dedddd;
+}
+
+.section-container {
+	display: flex;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+#map{
+	width: 60%;
+	height: 500px;
+}
