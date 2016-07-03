@@ -7,13 +7,14 @@
 		<link rel="stylesheet" type="text/css" href="css/grid.css">
 		<link rel="stylesheet" type="text/css" href="css/animate.css">
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<script src="js/modernizr-custom.js"></script> <!-- Para Explorer 9 -->
 	</head>
 
 	<body>
-		<header class="header">
+		<header id="title-img-animated" class="header">
 			<h1 class="title">Batman</h1>
 			<!-- <img class="title-img" src="images/batman.jpg" alt="Señal de batman"> -->
-			<div id="title-img-animated" class="title-img"></div>
+			<div class="title-img"></div>
 			<p class="title-cite animated rotateInDownLeft">“Él puede tomar la decisión que nadie más puede, la decisión correcta”</p>
 		</header>
 		<nav class="navbar">
@@ -38,7 +39,7 @@
 		<div class="container"> <!-- Todo de nuestra web tendra un tamaño fijo -->
 			<section id="quien-soy" class="about-me clearfix section-container" >
 				<div class="batman-video">
-					<video width="550" height="300" controls>
+					<video id="video-batman" width="550" height="300" controls>
 						<source src="videos/batman-lego.mp4" type="video/mp4">
 					</video>
 				</div>
@@ -116,9 +117,9 @@
 					</div>
 				</div>
 			</section>
-			<section id="transporte" class="section-container">
+			<section id="transporte" class="transport section-container"> <!-- Transport: internet explorer 9 -->
 				<div class="row-flex">
-					<article class="transporte-item">
+					<article class="transporte-item item-1"> <!-- Internet explorer 9 -->
 						<figure>
 							<img src="images/car.jpg" alt="Coche" class="transporte-img">
 							<figcaption>
@@ -127,7 +128,7 @@
 						</figure>
 						<p class="transporte-info">Fabricado en el año <time datetime="2005">2005</time> y se uso durante toda la trilogía.</p>
 					</article>
-					<article class="transporte-item">
+					<article class="transporte-item item-2"> <!-- Internet Explorer 9 -->
 						<figure>
 							<img src="images/moto.jpg" alt="Moto" class="transporte-img">
 							<figcaption>
@@ -143,5 +144,8 @@
 			Juan Delgado &copy; 2016 Kameic.io
 		</footer>
 	</body>
+	<script src="js/full-screen.js"></script>
 	<script src="js/animation.js"></script>
+	<script src="js/menu.js"></script>
+
 </html>

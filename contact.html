@@ -5,6 +5,9 @@
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link rel="stylesheet" type="text/css" href="css/grid.css">
+		<link rel="stylesheet" href="css/font-awesome.css">
+		<script src="js/modernizr-custom.js"></script> <!-- Para explorer 9 -->
+		<script src="js/jquery-3.0.0.js"></script>
 		<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA-jpiiZm0kg4wbYwPvUtNZvyLbiNcz6p8"></script>
 		<script>
 			function initialize() {
@@ -58,13 +61,20 @@
 				</div>
 
 				<div class="col-6">
-					<form class="form" name="contact-batman" method="get">
+					<form id="form-contact" class="form" name="contact-batman" method="get" novalidate>
 						<div class="form-row">
 							<label for="nombre">Nombre:</label>
 							<input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
 							
-							<label for="apellidos">Apellidos:</label>
-							<input type="text" id="apellidos" name="apellidos" placeholder="apellidos" required>
+							<!-- <label for="apellidos">Apellidos:</label>
+							<input type="text" id="apellidos" name="apellidos" placeholder="apellidos" required> -->
+						</div>
+						<div class="form-row">
+							<span>¿Tienes apellidos?</span>
+							<label for="apellidos_si">Si</label>
+							<input type="radio" id="apellidos_si" name="tienes_apellidos" value="yes" required>
+							<label for="apellidos_no">No</label>
+							<input type="radio" id="apellidos_no" name="tienes_apellidos" value="no" required>
 						</div>
 
 						<div class="form-row">
@@ -86,6 +96,14 @@
 						<div class="form-row">
 							<label for="ejercito">Tamaño del ejercito</label>
 							<input type="number" id="ejercito" name="ejercito" min="20" required>
+
+							<div id="too-many-enemies" class="form-row">
+								<span>Son demasiados enemigos. ¿Estás seguro?</span>
+								<label for="seguro_si">Si</label>
+								<input type="radio" id= "seguro_si" name="estas_seguro" value="yes" required>
+								<label for="seguro_no">No</label>
+								<input type="radio" id= "seguro_no" name="estas_seguro" value="no" required>
+							</div>
 						</div>
 
 						<div class="form-row">
@@ -94,7 +112,7 @@
 						</div>
 
 						<div class="form-row">
-							<input type="submit" name="Enviar">
+							<button id="enviar" type="submit" name="Enviar">Enviar</button>
 						</div>
 					</form>
 				</div>
@@ -137,4 +155,7 @@
 			Juan Delgado &copy; 2016 kameic.com
 		</footer>
 	</body>
+	<script src="js/form.js"></script>
+	<script src="js/geolocation.js"></script>
+	<script src="js/send-notification.js"></script>
 </html>

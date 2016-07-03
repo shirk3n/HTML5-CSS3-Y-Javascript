@@ -59,6 +59,12 @@ body {
 
 }
 
+/*Reverse es para que se muestre los colores al contrario*/
+.navbar .navbar-list .navbar-item.active-reverse {
+	color:#101010;
+	background-color: #F7F7F7;
+
+}
 .title {
 	position: absolute;
 	left: 0;
@@ -205,7 +211,7 @@ input {
 	border-radius: 4px;
 }
 
-input[type=button], input[type=submit], input[type=reset] {
+input[type=button], input[type=submit], input[type=reset], button {
 	background-color: #4CAF50;
 	border: none;
 	color: white;
@@ -214,6 +220,10 @@ input[type=button], input[type=submit], input[type=reset] {
 	margin: 4px 2px;
 	cursor: pointer;
 	border-radius: 0px;
+}
+
+#too-many-enemies{
+	display: none;
 }
 
 table {
@@ -278,3 +288,20 @@ tbody > tr:hover {
 
 	}
 }
+.no-flexbox .transport {
+	overflow: auto;
+}
+
+/*Para internet explorer 9*/
+.no-flexbox .transport .item-1 {
+	float: left;
+}
+
+.no-flexbox .transport .item-2 {
+	float: right;
+}
+
+
+
+
+
