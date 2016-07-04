@@ -8,6 +8,10 @@ body {
 	overflow-x: hidden;
 }
 
+#googleMap {
+	height: 400px;
+}
+
 @font-face {
 	font-family: batman;
 	src: url(../fonts/batmfo__.ttf);
@@ -38,33 +42,33 @@ body {
 
 .navbar .navbar-list .navbar-item {
 	display: inline-block;
-	font-size: 16px; /*font-size:16px y en el de arriba font-size:0; ---> Se junta los items*/
+	font-size: 16px;
+}
+
+.navbar .navbar-list .navbar-item.active {
+	color: #F7F7F7;
+	background-color: #A4A4A4;
+}
+
+.navbar .navbar-list .navbar-item.active-reverse {
+	color: #101010;
+	background-color: #F7F7F7;
 }
 
 .navbar .navbar-list .navbar-item a {
 	display: inline-block;
 	text-decoration: none;
 	padding: 20px;
-	color: rgba(0,0,0,0.92);
-	transition: all 0.7s linear; /*Transición sin hacer javascript*/
+	color: rgba(0, 0, 0, 0.92);
+	transition: all 0.5s linear;
 }
+
 
 .navbar .navbar-list .navbar-item a:hover {
 	color: #F7F7F7;
 	background-color: #A4A4A4;
 }
-.navbar .navbar-list .navbar-item.active {
-	color:#F7F7F7;
-	background-color: #A4A4A4;
 
-}
-
-/*Reverse es para que se muestre los colores al contrario*/
-.navbar .navbar-list .navbar-item.active-reverse {
-	color:#101010;
-	background-color: #F7F7F7;
-
-}
 .title {
 	position: absolute;
 	left: 0;
@@ -74,10 +78,9 @@ body {
 	font-family: batman;
 	text-align: center;
 	font-size: 100px;
-	animation:titleAnimation 2s forwards; /*Forwards es para que se quede como estaba al principio*/
+	animation: titleAnimation 2s forwards;
 	visibility: hidden;
-	animation-delay: 0.8;
-
+	animation-delay: 0.8s;
 }
 
 .title-img {
@@ -87,11 +90,11 @@ body {
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 	background-position: center center;
-	/*transition: transform 1s;*/
+	transition: all 0.5s;
 }
-.title-img:hover{
-/*	transform: scale(1.2,1.2); Aumentar la foto de batman, pero el escalado tiene el problema que se sale del contenedor*/
-background-size: 115% 115%; /*Aumentar imagen dentro del contenedor*/
+
+.title-img:hover {
+	background-size: 115% 115%;
 }
 
 .title-cite {
@@ -106,7 +109,6 @@ background-size: 115% 115%; /*Aumentar imagen dentro del contenedor*/
 	opacity: 0;
 	animation: subTitleAnimation 3s forwards;
 	animation-delay: 1s;
-
 }
 
 .about-me .batman-photo {
@@ -125,34 +127,33 @@ background-size: 115% 115%; /*Aumentar imagen dentro del contenedor*/
 	border-radius: 50%;
 }
 
-/*Transición de la foto cambie cuando te pones encima cambia (falta el hover)*/
-.flip{
-	position: relative; /*Relativo para poder jugar con nuestros hijos*/
+.flip {
+	position: relative;
 	height: 305px;
 }
 
-.front, .back{
-	position: absolute; /*Sacamos el elemento del flujo normal de la web*/
-	backface-visibility: hidden; /*La imagen que esté detras de la principal esté oculta*/
+.front, .back {
+	position: absolute;
+	backface-visibility: hidden;
 	-webkit-backface-visibility: hidden;
 	transition: transform 1s;
 }
 
-.back{
+.back {
 	transform: rotateY(-180deg);
 	-webkit-transform: rotateY(-180deg);
 }
 
-.flip:hover .front{
+.flip:hover .front {
 	transform: rotateY(-180deg);
 	-webkit-transform: rotateY(-180deg);
 }
 
-.flip:hover .back{
+.flip:hover .back {
 	transform: rotateY(0);
 	-webkit-transform: rotateY(0);
 }
-/*--------------------------*/
+
 .section-content-reverse {
 	background-color: rgba(0, 0, 0, 0.92);
 	color: white;
@@ -222,7 +223,7 @@ input[type=button], input[type=submit], input[type=reset], button {
 	border-radius: 0px;
 }
 
-#too-many-enemies{
+#too-many-enemies {
 	display: none;
 }
 
@@ -250,20 +251,12 @@ tbody > tr:hover {
 }
 
 .section-container {
-	display: flex;
 	padding-top: 50px;
 	padding-bottom: 50px;
 }
 
-#map{
-	width: 60%;
-	height: 500px;
-}
-
-/*Animaciones*/
-
-@keyframes titleAnimation{
-	0%{
+@keyframes titleAnimation {
+	0% {
 		font-size: 200px;
 	}
 	50%{
@@ -275,24 +268,22 @@ tbody > tr:hover {
 	}
 }
 
-@keyframes subTitleAnimation{
+@keyframes subTitleAnimation {
 	0%{
 		opacity: 0;
 	}
 	50%{
 		opacity: 0.5;
-
 	}
 	100%{
 		opacity: 1;
-
 	}
 }
+
 .no-flexbox .transport {
 	overflow: auto;
 }
 
-/*Para internet explorer 9*/
 .no-flexbox .transport .item-1 {
 	float: left;
 }
@@ -300,8 +291,3 @@ tbody > tr:hover {
 .no-flexbox .transport .item-2 {
 	float: right;
 }
-
-
-
-
-
